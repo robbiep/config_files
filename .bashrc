@@ -7,6 +7,7 @@ alias dev=ssh_to_dev
 alias sstock='cd ~/code/shutterstock;'
 alias g='git'
 alias v='vim'
+alias r='rock'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
