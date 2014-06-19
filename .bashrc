@@ -5,7 +5,8 @@ function ssh_to_dev(){
 }
 alias dev=ssh_to_dev
 alias sstock='cd ~/code/shutterstock;'
-
+alias g='git'
+alias v='vim'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
