@@ -32,9 +32,9 @@
 [alias]
         s = status
         a = add .
-        A = add -A
+        aa = add -A
         c = commit
-        C = commit -m
+        cm = commit -m
         l = log
         o = checkout
         b = branch
