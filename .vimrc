@@ -15,6 +15,7 @@ set shiftwidth=2
 set smartindent 
 set smarttab    
 set softtabstop=4   
+set ts=2
 
 set ruler
 
