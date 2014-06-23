@@ -36,3 +36,4 @@
         l = log
         o = checkout
         b = branch
+        r = reset
