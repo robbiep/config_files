@@ -9,8 +9,10 @@ alias g='git'
 alias v='vim'
 alias r='rock'
 
-
-PS1="\[$GREEN\]\t\[$RED\]-\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]"
+function last_two_dirs {
+  pwd |rev| awk -F / '{print $1,$2}' | rev | sed s_\ _/_
+}
+export PS1="\e[0;35m\]\t \e[1;36m\]# \[\e[m\]"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
