@@ -9,6 +9,9 @@ alias g='git'
 alias v='vim'
 alias r='rock'
 
+
+PS1="\[$GREEN\]\t\[$RED\]-\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]"
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
