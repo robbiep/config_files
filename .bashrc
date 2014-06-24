@@ -87,3 +87,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+if [ ! "$LOGGED_IN" ]; then 
+  LOGGEN_IN=1
+  echo Logon by $USER@$HOSTNAME
+fi
