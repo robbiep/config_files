@@ -80,7 +80,7 @@ last_two_dirs ()
   echo $dir
 }
 
-PS1='\[\e[1;33m\]{\[${c_reset}\e[0;35m\]$(last_two_dirs)\[\e[1;33m}${c_reset}\]$(git_prompt) \[\e[1;36m\]#\[\e[m\] '
+PS1='\[\e[1;33m\]{\[${c_reset}\e[0;35m\]$(last_two_dirs)\[\e[1;33m}${c_reset}\]$(git_prompt)\[\e[0;36m\] ɸ\[\e[m\] '
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then

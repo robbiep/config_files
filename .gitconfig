@@ -39,3 +39,4 @@
         r = reset
         ph = push
         pl = pull
+        d = diff
