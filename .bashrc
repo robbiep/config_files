@@ -69,11 +69,11 @@ last_two_dirs ()
   dir=${dir//ShutterStock/SS*}
   if [ ${#dir} -gt 15 ]; then
     dir_arr=(${dir//\// })
-    if [ ${#dir_arr[0]} -gt 10 ]; then
-      dir_arr[0]="${dir_arr[0]:0:9}..."
+    if [ ${#dir_arr[0]} -gt 11 ]; then
+      dir_arr[0]="${dir_arr[0]:0:11}>"
     fi
-    if [ ${#dir_arr[1]} -gt 10 ]; then
-      dir_arr[1]="${dir_arr[1]:0:9}..."
+    if [ ${#dir_arr[1]} -gt 11 ]; then
+      dir_arr[1]="${dir_arr[1]:0:11}>"
     fi
     dir="${dir_arr[0]}/${dir_arr[1]}"
   fi
