@@ -19,7 +19,7 @@ set softtabstop=22
 set ts=2
 set cmdheight=1
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ (\%c,\%l)
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
