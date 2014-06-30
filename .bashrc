@@ -64,7 +64,7 @@ git_prompt ()
     git_color="${c_git_dirty}"
   fi
 
-  echo "$git_color$git_branch"
+  echo $git_branch
 }
 
 last_two_dirs () 
@@ -88,7 +88,7 @@ last_two_dirs ()
 
 prompt=" ɸ "
 
-PS1='\[$c_brack\]{\[$c_dir\]$(last_two_dirs)\[$c_brack\]}\[$c_sqbr\][\[$c_reset\]$(git_prompt)\[$c_sqbr\]]\[$c_prompt\]$prompt\[$c_reset\]'
+PS1='\[$c_brack\]{\[$c_dir\]$(last_two_dirs)\[$c_brack\]}\[$c_reset$git_color\][$(git_prompt)]\[$c_prompt\]$prompt\[$c_reset\]'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
