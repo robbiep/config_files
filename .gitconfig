@@ -37,6 +37,7 @@
         o = checkout
         b = branch
         r = reset
-        ph = push
+        ps = push
         pl = pull
         d = diff
+        ch = checkout
