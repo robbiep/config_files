@@ -20,8 +20,8 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   c_reset=`tput sgr0`
   c_dir=`tput sgr0; tput setaf 5`
   c_more=`tput sgr0; tput bold; tput setaf 1`
-  c_git_clean=`tput sgr0; tput setaf 2`
-  c_git_dirty=`tput sgr0; tput setaf 1`
+  c_git_clean=`tput setaf 2`
+  c_git_dirty=`tput setaf 1`
   c_brack=`tput sgr0; tput bold; tput setaf 3`
   c_sqbr=`tput sgr0; tput setaf 7`
   c_prompt=`tput sgr0; tput setaf 6`
@@ -64,7 +64,7 @@ git_prompt ()
     git_color="${c_git_dirty}"
   fi
 
-  echo "$c_sqbr[$git_color$git_branch$c_sqbr]"
+  echo "$git_color$git_branch"
 }
 
 last_two_dirs () 
@@ -83,12 +83,12 @@ last_two_dirs ()
     fi
     dir="${dir_arr[0]}/${dir_arr[1]}"
   fi
-  echo "$c_brack{$c_dir$dir$c_brack}"
+  echo "$dir"
 }
 
-prompt="$c_prompt ɸ $c_reset"
+prompt=" ɸ "
 
-PS1='$(last_two_dirs)$(git_prompt)$prompt'
+PS1='\[$c_brack\]{\[$c_dir\]$(last_two_dirs)\[$c_brack\]}\[$c_sqbr\][\[$c_reset\]$(git_prompt)\[$c_sqbr\]]\[$c_prompt\]$prompt\[$c_reset\]'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
