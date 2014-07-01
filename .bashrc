@@ -19,7 +19,6 @@ alias ssp='ss cd shutterstock-photo-api;'
 ######################################################################
 #   BASH PROMPT
 
-git_color=
 # fetch dynamic terminal data
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   c_reset=`tput sgr0`
@@ -30,7 +29,6 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   c_brack=`tput sgr0; tput bold; tput setaf 3`
   c_sqbr=`tput sgr0; tput setaf 7`
   c_prompt=`tput sgr0; tput setaf 6`
-  git_color=$git_color
 else
   c_reset=
   c_dir=
@@ -40,8 +38,23 @@ else
   c_brack=
   c_sqbr=
   c_prompt=
-  git_color=
 fi
+
+git_color ()
+{
+
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    return 0
+  fi
+
+  if git diff --quiet 2>/dev/null >&2; then
+    git_color="$c_git_clean"
+  else
+    git_color="$c_git_dirty"
+  fi
+
+  echo $git_color
+}
 
 # git branch name in prompt
 git_prompt ()
@@ -65,12 +78,6 @@ git_prompt ()
     git_branch="${git_branch:0:22}>"
   fi
 
-  if git diff --quiet 2>/dev/null >&2; then
-    git_color="${c_git_clean}"
-  else
-    git_color="${c_git_dirty}"
-  fi
-  
   if [ "$git_branch" ]; then
     git_branch="[$git_branch]"
   fi
@@ -99,7 +106,7 @@ last_two_dirs ()
 
 prompt=" ɸ "
 
-PS1='\[$c_brack\]{\[$c_dir\]$(last_two_dirs)\[$c_brack\]}\[$c_reset$git_color\]$(git_prompt)\[$c_prompt\]$prompt\[$c_reset\]'
+PS1='\[$c_brack\]{\[$c_dir\]$(last_two_dirs)\[$c_brack\]}\[$c_reset$(git_color)\]$(git_prompt)\[$c_prompt\]$prompt\[$c_reset\]'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
