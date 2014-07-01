@@ -3,3 +3,4 @@
 .bash_profile
 .gitconfig
 .ssh/config
+.inputrc
