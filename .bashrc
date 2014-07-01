@@ -11,6 +11,10 @@ alias ss='cd ~/code/shutterstock;'
 alias g='git'
 alias v='vim'
 alias r='rock'
+alias t='task'
+alias cd-mason='ss; cd shutterstock-mason/repo;'
+alias cd-www='ss; cd shutterstock-www;'
+alias cd-photo='ss; cd shutterstock-photo-api;'
 
 ######################################################################
 #   BASH PROMPT
