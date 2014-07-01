@@ -100,14 +100,8 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+# Highlight trailing whitespace
+match Todo /\s\+$/
 
 if has("gui_running")
     set guioptions-=T
@@ -116,14 +110,3 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Mapping of autocompletion
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap /*          /**/<Left><Left>
-inoremap /*<Space>   /*<Space><Space>*/<Left><Left><Left>
-inoremap /*<CR>      /*<CR>*/<Esc>O
-inoremap <Leader>/*  /*
