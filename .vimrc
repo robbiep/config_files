@@ -110,3 +110,7 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
+" Syntax highlighitng for unknown extensions
+au BufNewFile,BufRead *.pm setf perl
+au BufNewFile,BufRead *.mhtml setf perl
+au BufNewFile,BufRead *.mh setf perl
