@@ -100,7 +100,7 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-# Highlight trailing whitespace
+" Highlight trailing whitespace
 match Todo /\s\+$/
 
 if has("gui_running")
