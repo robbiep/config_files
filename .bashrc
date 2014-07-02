@@ -78,11 +78,13 @@ git_prompt ()
     git_branch="${git_branch:0:22}>"
   fi
 
-  if [ "$git_branch" ]; then
-    git_branch="[$git_branch]"
-  fi
+  echo \[$git_branch\]
 
-  echo $git_branch
+#"  if [ "$git_branch" ]; then
+#"    git_branch="[$git_branch]"
+#"  fi
+#"
+#"  echo $git_branch
 }
 
 last_two_dirs () 
