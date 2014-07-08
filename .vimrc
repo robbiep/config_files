@@ -34,9 +34,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set number          
-set linebreak       
-set textwidth=100   
+set number
+set linebreak
 set showmatch
 set visualbell
 
@@ -47,10 +46,10 @@ set incsearch
 
 set autoindent
 set expandtab
-set shiftwidth=2    
-set smartindent 
-set smarttab    
-set softtabstop=22   
+set shiftwidth=2
+set smartindent
+set smarttab
+set softtabstop=22
 set ts=2
 set cmdheight=1
 set laststatus=2
@@ -75,7 +74,7 @@ set tm=500
 
 set ruler
 
-set undolevels=1000 
+set undolevels=1000
 set backspace=indent,eol,start
 
 set cursorline
