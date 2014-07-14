@@ -9,6 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -51,9 +52,29 @@ set smartindent
 set smarttab
 set softtabstop=22
 set ts=2
-set cmdheight=1
+
+
+"""" COLOR SCHEME """"
+"let g:molokai_original = 1
+colorscheme molokai
+set t_Co=256
+
+"""" STATUS LINE & AIRLINE """"
+"set cmdheight=1
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" now set it up to change the status line based on mode
+hi StatusLine term=reverse ctermfg=4 ctermbg=0 gui=bold,reverse
+if version >= 700
+  au InsertEnter * hi StatusLine term=reverse ctermfg=2 ctermbg=0 gui=undercurl guisp=Magenta
+  au InsertLeave * hi StatusLine term=reverse ctermfg=4 ctermbg=0 gui=bold,reverse
+endif
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ (\%c,\%l)
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -81,9 +102,9 @@ set cursorline
 
 syntax enable
 
-colorscheme desert
-set background=dark
-highlight LineNr ctermfg=grey ctermbg=black
+" colorscheme desert
+" set background=dark
+"highlight LineNr ctermfg=grey ctermbg=black
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
@@ -113,3 +134,4 @@ endif
 au BufNewFile,BufRead *.pm setf perl
 au BufNewFile,BufRead *.mhtml setf perl
 au BufNewFile,BufRead *.mh setf perl
+
