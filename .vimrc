@@ -10,15 +10,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
-" git repos on your local machine (i.e. when working on your own plugin)
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Avoid a name conflict with L9
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,7 +49,7 @@ set ts=2
 
 """" COLOR SCHEME """"
 "let g:molokai_original = 1
-colorscheme molokai
+colorscheme Tomorrow-Night-Bright
 set t_Co=256
 
 """" STATUS LINE & AIRLINE """"
