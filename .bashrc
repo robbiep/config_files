@@ -17,6 +17,13 @@ alias ssw='ss cd shutterstock-www;'
 alias ssp='ss cd shutterstock-photo-api;'
 
 ######################################################################
+#   SETTINGS
+
+HISTSIZE=1000
+
+
+
+######################################################################
 #   BASH PROMPT
 
 # fetch dynamic terminal data

@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
+Bundle 'jelera/vim-javascript-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,7 +53,7 @@ set ts=2
 
 """" COLOR SCHEME """"
 "let g:molokai_original = 1
-colorscheme Tomorrow-Night-Bright
+colorscheme molokai
 set t_Co=256
 
 """" STATUS LINE & AIRLINE """"
@@ -63,7 +64,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 "let g:airline_powerline_fonts=1
 
-" NERDtree
+"""" NERDtree """"
 map <C-n> :NERDTreeToggle<CR>
 
 
@@ -86,9 +87,10 @@ set cursorline
 
 syntax enable
 
-" colorscheme desert
-" set background=dark
-"highlight LineNr ctermfg=grey ctermbg=black
+
+"""" KEY MAPPING """"
+
+inoremap <C-t>     <Esc>:tabnew<CR>
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
