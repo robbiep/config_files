@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Bundle 'jelera/vim-javascript-syntax'
 
 " All of your Plugins must be added before the following line
@@ -50,28 +51,6 @@ set smarttab
 set softtabstop=22
 set ts=2
 
-
-"""" COLOR SCHEME """"
-"let g:molokai_original = 1
-colorscheme molokai
-set t_Co=256
-
-"""" STATUS LINE & AIRLINE """"
-"set cmdheight=1
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-"let g:airline_powerline_fonts=1
-
-"""" NERDtree """"
-map <C-n> :NERDTreeToggle<CR>
-
-
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
@@ -90,6 +69,33 @@ set backspace=indent,eol,start
 set cursorline
 
 syntax enable
+
+
+"""" COLOR SCHEME """"
+"let g:molokai_original = 1
+colorscheme molokai
+set t_Co=256
+
+
+"""" STATUS LINE & AIRLINE """"
+"set cmdheight=1
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+"let g:airline_powerline_fonts=1
+
+
+"""" NERDtree """"
+map <C-n> :NERDTreeToggle<CR>
+
+
+"""" ctrlp """"
+let g:ctrlp_max_files=0
 
 
 """" KEY MAPPING """"
