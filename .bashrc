@@ -15,7 +15,7 @@ alias ss='cd ~/code/shutterstock;'
 alias ssm='ss cd shutterstock-mason/repo;'
 alias ssw='ss cd shutterstock-www;'
 alias ssp='ss cd shutterstock-photo-api;'
-aliar grep='grep --color'
+alias grep='grep --color'
 
 ######################################################################
 #   SETTINGS
