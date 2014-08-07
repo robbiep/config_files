@@ -130,4 +130,5 @@ endif
 au BufNewFile,BufRead *.pm setf perl
 au BufNewFile,BufRead *.mhtml setf perl
 au BufNewFile,BufRead *.mh setf perl
+au BufNewFile,BufRead *.md setf perl
 
