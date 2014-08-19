@@ -99,8 +99,11 @@ let g:ctrlp_max_files=0
 
 
 """" KEY MAPPING """"
-
-inoremap <C-t>     <Esc>:tabnew<CR>
+set showtabline=2               " File tabs allways visible
+nmap <C-t> :tabnew<cr>
+map <C-t> :tabnew<cr>
+imap <C-t> <ESC>:tabnew<cr>
+map <C-w> :tabclose<cr>
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
