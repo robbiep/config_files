@@ -104,6 +104,12 @@ nmap <C-t> :tabnew<cr>
 map <C-t> :tabnew<cr>
 imap <C-t> <ESC>:tabnew<cr>
 map <C-w> :tabclose<cr>
+imap <kplus> :tabnext<cr>
+map <kplus> :tabnext<cr>
+nmap <kplus> :tabnext<cr>
+imap <kminus> :tabprevious<cr>
+map <kminus> :tabprevious<cr>
+nmap <kminus> :tabprevious<cr>
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
