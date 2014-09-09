@@ -141,3 +141,4 @@ au BufNewFile,BufRead *.mhtml setf perl
 au BufNewFile,BufRead *.mh setf perl
 au BufNewFile,BufRead,BufNew *.md setf perl
 au BufNewFile,BufRead,BufNew *.md set filetype=perl
+au BufNewFile,BufRead,BufNew *.feature set filetype=ruby
