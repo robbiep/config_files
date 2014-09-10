@@ -68,8 +68,9 @@ set backspace=indent,eol,start
 
 set cursorline
 
-syntax enable
+set noswapfile
 
+syntax enable
 
 """" COLOR SCHEME """"
 "let g:molokai_original = 1

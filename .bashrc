@@ -1,28 +1,45 @@
 # .bashrc
 
 ######################################################################
-#   ALIASES 
+#   ALIASES
 
 function ssh_to_dev(){
   ssh -t dev-code$1.nj01.shuttercloud.net "cd code/shutterstock ; bash"
 }
 alias dev=ssh_to_dev
+alias spl='ssh logs.shuttercorp.net'
+alias sql='ssh logs.qa.shuttercorp.net'
+alias sdl='ssh logs.dev.shuttercorp.net'
+
 alias g='git'
+alias gpl='git pull'
+alias gps='git push'
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit' 
+
 alias v='vim'
 alias r='rock'
 alias t='task'
+alias grep='grep --color'
+
 alias ss='cd ~/code/shutterstock;'
 alias ssm='ss cd shutterstock-mason/repo;'
 alias ssw='ss cd shutterstock-www;'
 alias ssp='ss cd shutterstock-photo-api;'
-alias grep='grep --color'
+
+alias logm='tail -f ~/code/shutterstock/shutterstock-mason/logs/*.log'
+alias logma='tail -f ~/code/shutterstock/shutterstock-mason/logs/admin.error.log'
+alias plogma='tail -f /var/log/flume/httpd_admin_shutterstock_com_error/current'
+alias plogm='tail -f /var/log/flume/httpd_www_shutterstock_com_error/current | egrep -v "TRANSMIT_ERROR|is_bot_probably|Shutterstock::Service::Search::Client::Legacy|Shutterstock::Service::Search::V2|Invalid JSONP token|libapreq|File does not exist|recaptcha|javascript error|/opt/shutterstock-perl/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Unicode/Normalize.pm|Absinthe"'
+alias plogw='tail -f /var/log/flume/shutterstock-www__web.web.stderr.log/current /var/log/flume/shutterstock-photo-swig__web.web.std*/current /var/log/flume/shutterstock-photo-api__web.web.stdout.log/current'
 
 ######################################################################
 #   SETTINGS
 
 HISTSIZE=100000
-
-
 
 ######################################################################
 #   BASH PROMPT
@@ -87,15 +104,9 @@ git_prompt ()
   fi
 
   echo \[$git_branch\]
-
-#"  if [ "$git_branch" ]; then
-#"    git_branch="[$git_branch]"
-#"  fi
-#"
-#"  echo $git_branch
 }
 
-last_two_dirs () 
+last_two_dirs ()
 {
   dir=$(pwd |rev| awk -F / '{print $1,$2}' | rev | sed s_\ _/_)
   dir=${dir//shutterstock/ss>}
