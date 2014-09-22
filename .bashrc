@@ -18,7 +18,9 @@ alias gs='git status'
 alias gl='git log'
 alias gd='git diff'
 alias ga='git add'
-alias gc='git commit' 
+alias gc='git commit'
+alias gb='git branch'
+alias gf='git fetch'
 
 alias v='vim'
 alias r='rock'
@@ -27,14 +29,16 @@ alias grep='grep --color'
 
 alias ss='cd ~/code/shutterstock;'
 alias ssm='ss cd shutterstock-mason/repo;'
+alias ssma='ss cd shutterstock-mason-acceptance'
 alias ssw='ss cd shutterstock-www;'
 alias ssp='ss cd shutterstock-photo-api;'
 
-alias logm='tail -f ~/code/shutterstock/shutterstock-mason/logs/*.log'
-alias logma='tail -f ~/code/shutterstock/shutterstock-mason/logs/admin.error.log'
-alias plogma='tail -f /var/log/flume/httpd_admin_shutterstock_com_error/current'
-alias plogm='tail -f /var/log/flume/httpd_www_shutterstock_com_error/current | egrep -v "TRANSMIT_ERROR|is_bot_probably|Shutterstock::Service::Search::Client::Legacy|Shutterstock::Service::Search::V2|Invalid JSONP token|libapreq|File does not exist|recaptcha|javascript error|/opt/shutterstock-perl/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Unicode/Normalize.pm|Absinthe"'
-alias plogw='tail -f /var/log/flume/shutterstock-www__web.web.stderr.log/current /var/log/flume/shutterstock-photo-swig__web.web.std*/current /var/log/flume/shutterstock-photo-api__web.web.stdout.log/current'
+alias lm='tail -f ~/code/shutterstock/shutterstock-mason/logs/*.log'
+alias lma='tail -f ~/code/shutterstock/shutterstock-mason/logs/admin.error.log'
+alias lpma='tail -f /var/log/flume/httpd_admin_shutterstock_com_error/current'
+alias lpm='tail -f /var/log/flume/httpd_www_shutterstock_com_error/current | egrep -v "TRANSMIT_ERROR|is_bot_probably|Shutterstock::Service::Search::Client::Legacy|Shutterstock::Service::Search::V2|Invalid JSONP token|libapreq|File does not exist|recaptcha|javascript error|/opt/shutterstock-perl/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Unicode/Normalize.pm|Absinthe"'
+alias lpw='tail -f /var/log/flume/shutterstock-www__web.web.stderr.log/current /var/log/flume/shutterstock-photo-swig__web.web.std*/current /var/log/flume/shutterstock-photo-api__web.web.stdout.log/current'
+alias lpp='tail -f /var/log/flume/shutterstock-photo-api__web.web.stdout.log'
 
 ######################################################################
 #   SETTINGS
