@@ -7,15 +7,15 @@ function ssh_to_dev(){
   ssh -t dev-code$1.nj01.shuttercloud.net "cd code/shutterstock ; bash"
 }
 alias dev=ssh_to_dev
-alias spl='ssh logs.shuttercorp.net'
+alias slp='ssh logs.shuttercorp.net'
+alias slq='ssh logs.qa.shuttercorp.net'
+alias sld='ssh logs.dev.shuttercorp.net'
 alias spp='ssh prod-paymentworker01.ma01.shuttercorp.net'
-alias sql='ssh logs.qa.shuttercorp.net'
-alias sqp='ssh qa-paymentworker01.nj01.shuttercloud.net'
-alias sdl='ssh logs.dev.shuttercorp.net'
-alias sdp='ssh dev-paymentworker01.nj01.shuttercloud.net'
+alias spq='ssh qa-paymentworker01.nj01.shuttercloud.net'
+alias spd='ssh dev-paymentworker01.nj01.shuttercloud.net'
 
-alias dbmw='db master www'
-alias pdbmw='cd cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run db master www'
+alias dbw='db master www'
+alias dbwp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run db master www'
 
 alias g='git'
 alias gpl='git pull'
@@ -41,9 +41,9 @@ alias ssp='ss cd shutterstock-photo-api;'
 
 alias lm='tail -f ~/code/shutterstock/shutterstock-mason/logs/*.log'
 alias lma='tail -f ~/code/shutterstock/shutterstock-mason/logs/admin.error.log'
-alias lpma='tail -f /var/log/flume/httpd_admin_shutterstock_com_error/current'
-alias lpm='tail -f /var/log/flume/httpd_www_shutterstock_com_error/current | egrep -v "TRANSMIT_ERROR|is_bot_probably|Shutterstock::Service::Search::Client::Legacy|Shutterstock::Service::Search::V2|Invalid JSONP token|libapreq|File does not exist|recaptcha|javascript error|/opt/shutterstock-perl/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Unicode/Normalize.pm|Absinthe"'
-alias lpw='tail -f /var/log/flume/shutterstock-www__web.web.stderr.log/current /var/log/flume/shutterstock-photo-swig__web.web.std*/current /var/log/flume/shutterstock-photo-api__web.web.stdout.log/current'
+alias lmap='tail -f /var/log/flume/httpd_admin_shutterstock_com_error/current'
+alias lmp='tail -f /var/log/flume/httpd_www_shutterstock_com_error/current | egrep -v "TRANSMIT_ERROR|is_bot_probably|Shutterstock::Service::Search::Client::Legacy|Shutterstock::Service::Search::V2|Invalid JSONP token|libapreq|File does not exist|recaptcha|javascript error|/opt/shutterstock-perl/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Unicode/Normalize.pm|Absinthe"'
+alias lwp='tail -f /var/log/flume/shutterstock-www__web.web.stderr.log/current /var/log/flume/shutterstock-photo-swig__web.web.std*/current /var/log/flume/shutterstock-photo-api__web.web.stdout.log/current'
 alias lpp='tail -f /var/log/flume/shutterstock-photo-api__web.web.stdout.log'
 
 ######################################################################
