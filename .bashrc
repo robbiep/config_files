@@ -8,8 +8,14 @@ function ssh_to_dev(){
 }
 alias dev=ssh_to_dev
 alias spl='ssh logs.shuttercorp.net'
+alias spp='ssh prod-paymentworker01.ma01.shuttercorp.net'
 alias sql='ssh logs.qa.shuttercorp.net'
+alias sqp='ssh qa-paymentworker01.nj01.shuttercloud.net'
 alias sdl='ssh logs.dev.shuttercorp.net'
+alias sdp='ssh dev-paymentworker01.nj01.shuttercloud.net'
+
+alias dbmw='db master www'
+alias pdbmw='cd cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run db master www'
 
 alias g='git'
 alias gpl='git pull'
