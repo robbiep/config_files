@@ -15,7 +15,7 @@ alias spq='ssh qa-paymentworker01.nj01.shuttercloud.net'
 alias spd='ssh dev-paymentworker01.nj01.shuttercloud.net'
 
 alias dbw='db master www'
-alias dbwp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run db master www'
+alias dbwp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run perl db master www'
 
 alias g='git'
 alias gpl='git pull'
