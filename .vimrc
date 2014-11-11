@@ -19,6 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'morhetz/gruvbox'
+Bundle 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -76,15 +77,8 @@ syntax enable
 
 """" COLOR SCHEME """"
 "let g:molokai_original = 1
-colorscheme gruvbox
+colorscheme molokai "solarized "gruvbox
 set background=dark
-nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
-nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
-nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-
-nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
-nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
-nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 set t_Co=256
 
 
