@@ -16,6 +16,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'morhetz/gruvbox'
 
@@ -75,7 +76,15 @@ syntax enable
 
 """" COLOR SCHEME """"
 "let g:molokai_original = 1
-colorscheme molokai
+colorscheme gruvbox
+set background=dark
+nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
+nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
+nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
+
+nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 set t_Co=256
 
 
