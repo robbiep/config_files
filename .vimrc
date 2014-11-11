@@ -136,6 +136,8 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
+nmap <C-l> :set list!<cr>
+
 " Highlight trailing whitespace
 match Todo /\s\+$/
 
