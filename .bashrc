@@ -10,7 +10,7 @@ alias dev=ssh_to_dev
 alias slp='ssh logs.shuttercorp.net'
 alias slq='ssh logs.qa.shuttercorp.net'
 alias sld='ssh logs.dev.shuttercorp.net'
-alias spp='ssh prod-paymentworker01.ma01.shuttercorp.net'
+alias spp='ssh prod-paymentworker02.ma01.shuttercorp.net'
 alias spq='ssh qa-paymentworker01.nj01.shuttercloud.net'
 alias spd='ssh dev-paymentworker01.nj01.shuttercloud.net'
 
