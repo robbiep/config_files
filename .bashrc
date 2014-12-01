@@ -16,6 +16,7 @@ alias spd='ssh dev-paymentworker01.nj01.shuttercloud.net'
 
 alias dbw='db master www'
 alias dbwp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run perl db master www'
+alias dbbp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run perl db billing billing_service'
 
 alias g='git'
 alias gpl='git pull'
@@ -38,6 +39,7 @@ alias ssm='ss cd shutterstock-mason/repo;'
 alias ssma='ss cd shutterstock-mason-acceptance'
 alias ssw='ss cd shutterstock-www;'
 alias ssp='ss cd shutterstock-photo-api;'
+alias sspu='ss cd puppet;'
 
 alias lm='tail -f ~/code/shutterstock/shutterstock-mason/logs/*.log'
 alias lma='tail -f ~/code/shutterstock/shutterstock-mason/logs/admin.error.log'

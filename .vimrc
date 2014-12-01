@@ -20,6 +20,7 @@ Plugin 'tpope/vim-unimpaired'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'morhetz/gruvbox'
 Bundle 'altercation/vim-colors-solarized'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
