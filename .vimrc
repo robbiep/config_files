@@ -99,6 +99,12 @@ let g:airline_right_alt_sep = ''
 """" NERDtree """"
 map <C-n> :NERDTreeToggle<CR>
 
+"""" indent guides """"
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_start_level = 2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 
 """" ctrlp """"
 let g:ctrlp_max_files=0
@@ -116,6 +122,9 @@ nmap <kplus> :tabnext<cr>
 imap <kminus> :tabprevious<cr>
 map <kminus> :tabprevious<cr>
 nmap <kminus> :tabprevious<cr>
+map <C-h> :noh<cr>
+map <C-k> :set expandtab!<cr>
+map <C-l> :set list!<cr>
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
@@ -131,7 +140,6 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-nmap <C-l> :set list!<cr>
 
 " Highlight trailing whitespace
 match Todo /\s\+$/
