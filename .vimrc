@@ -115,7 +115,7 @@ set showtabline=2               " File tabs allways visible
 nmap <C-t> :tabnew<cr>
 map <C-t> :tabnew<cr>
 imap <C-t> <ESC>:tabnew<cr>
-map <C-w> :tabclose<cr>
+map <S-t> :tabclose<cr>
 imap <kplus> :tabnext<cr>
 map <kplus> :tabnext<cr>
 nmap <kplus> :tabnext<cr>
