@@ -28,6 +28,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
 alias gf='git fetch'
+alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD`'
 
 alias v='vim'
 alias r='rock'
