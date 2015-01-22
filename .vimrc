@@ -125,7 +125,7 @@ nmap <kminus> :tabprevious<cr>
 map <C-h> :noh<cr>
 map <C-k> :set expandtab!<cr>
 map <C-l> :set list!<cr>
-map <C-b> :!column -t <cr>gv:s/\(\S\)  /\1 /g<cr>:noh<cr>
+vmap <C-b> :!column -t <cr>gv:s/\(\S\)  /\1 /g<cr>:noh<cr>
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
