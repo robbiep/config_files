@@ -113,18 +113,19 @@ let g:ctrlp_max_files=0
 """" KEY MAPPING """"
 set showtabline=2               " File tabs allways visible
 nmap <C-t> :tabnew<cr>
-map <C-t> :tabnew<cr>
+map  <C-t> :tabnew<cr>
 imap <C-t> <ESC>:tabnew<cr>
-map <S-t> :tabclose<cr>
-imap <kplus> :tabnext<cr>
-map <kplus> :tabnext<cr>
-nmap <kplus> :tabnext<cr>
+map  <S-t> :tabclose<cr>
+imap <kplus>  :tabnext<cr>
+map  <kplus>  :tabnext<cr>
+nmap <kplus>  :tabnext<cr>
 imap <kminus> :tabprevious<cr>
-map <kminus> :tabprevious<cr>
+map  <kminus> :tabprevious<cr>
 nmap <kminus> :tabprevious<cr>
 map <C-h> :noh<cr>
 map <C-k> :set expandtab!<cr>
 map <C-l> :set list!<cr>
+map <C-b> :!column -t <cr>gv:s/\(\S\)  /\1 /g<cr>:noh<cr>
 
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
