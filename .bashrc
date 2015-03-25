@@ -3,21 +3,6 @@
 ######################################################################
 #   ALIASES
 
-function ssh_to_dev(){
-  ssh -t dev-code$1.nj01.shuttercloud.net "cd code/shutterstock ; bash"
-}
-alias dev=ssh_to_dev
-alias slp='ssh logs.shuttercorp.net'
-alias slq='ssh logs.qa.shuttercorp.net'
-alias sld='ssh logs.dev.shuttercorp.net'
-alias spp='ssh prod-paymentworker02.ma01.shuttercorp.net'
-alias spq='ssh qa-paymentworker01.nj01.shuttercloud.net'
-alias spd='ssh dev-paymentworker01.nj01.shuttercloud.net'
-
-alias dbw='db master www'
-alias dbwp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run perl db master www'
-alias dbbp='cd /opt/apps/shutterstock-mason/deployment/scripts/bin;rock run perl db billing billing_service'
-
 alias g='git'
 alias gpl='git pull'
 alias gps='git push'
@@ -31,23 +16,7 @@ alias gf='git fetch'
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
 
 alias v='vim'
-alias r='rock'
-alias t='task'
 alias grep='grep --color'
-
-alias ss='cd ~/code/shutterstock;'
-alias ssm='ss cd shutterstock-mason/repo;'
-alias ssma='ss cd shutterstock-mason-acceptance'
-alias ssw='ss cd shutterstock-www;'
-alias ssp='ss cd shutterstock-photo-api;'
-alias sspu='ss cd puppet;'
-
-alias lm='tail -f ~/code/shutterstock/shutterstock-mason/logs/*.log'
-alias lma='tail -f ~/code/shutterstock/shutterstock-mason/logs/admin.error.log'
-alias lmap='tail -f /var/log/flume/httpd_admin_shutterstock_com_error/current'
-alias lmp='tail -f /var/log/flume/httpd_www_shutterstock_com_error/current | egrep -v "TRANSMIT_ERROR|is_bot_probably|Shutterstock::Service::Search::Client::Legacy|Shutterstock::Service::Search::V2|Invalid JSONP token|libapreq|File does not exist|recaptcha|javascript error|/opt/shutterstock-perl/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Unicode/Normalize.pm|Absinthe"'
-alias lwp='tail -f /var/log/flume/shutterstock-www__web.web.stderr.log/current /var/log/flume/shutterstock-photo-swig__web.web.std*/current /var/log/flume/shutterstock-photo-api__web.web.stdout.log/current'
-alias lpp='tail -f /var/log/flume/shutterstock-photo-api__web.web.stdout.log'
 
 ######################################################################
 #   SETTINGS
@@ -147,7 +116,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ ! "$LOGGED_IN" ]; then 
+if [ ! "$LOGGED_IN" ]; then
   LOGGED_IN=1
   echo Logon by $USER@$HOSTNAME
+fi
+
+if [ -f ~/.bashrc_local ]; then
+  source ~/.bashrc_local
 fi
