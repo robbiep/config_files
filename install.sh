@@ -3,3 +3,4 @@ while read file; do
 done <files.dat
 
 touch -a ~/.bashrc_local
+touch -a ~/.vimrc_local.vim

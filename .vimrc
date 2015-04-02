@@ -162,4 +162,4 @@ au BufNewFile,BufRead,BufNew *.feature set filetype=ruby
 
 
 " Include external configs
-:so external_config.vim
+:so ~/.vimrc_local.vim
