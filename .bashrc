@@ -16,7 +16,7 @@ alias gf='git fetch'
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
 
 alias v='vim'
-alias grep='grep --color'
+alias grep='grep --color -n'
 
 ######################################################################
 #   SETTINGS
