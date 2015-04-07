@@ -14,6 +14,7 @@ alias gc='git commit'
 alias gb='git branch'
 alias gf='git fetch'
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
+alias ggrep='git grep -n'
 
 alias v='vim'
 alias grep='grep --color -n'
