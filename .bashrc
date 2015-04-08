@@ -71,46 +71,45 @@ git_prompt ()
     return 0
   fi
 
-  git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-  if [ "${git_branch:0:7}" == "feature" ]; then
-    git_branch="f>${git_branch:7}"
-  fi
-  if [ "${git_branch:0:3}" == "bug" ]; then
-    git_branch="b>${git_branch:3}"
-  fi
-  if [ "${git_branch:0:6}" == "bugfix" ]; then
-    git_branch="b>${git_branch:6}"
-  fi
+  branch_str=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
+# TODO make this work VVVVVV
+#  branch_arr=(${branch_str//\// })
+#  end=$(expr ${#branch_arr[@]} - 1)
+#  branch="";
+#  for i in $(seq 0 $end);
+#  do
+#    if [[ $i != $end ]]; then
+#      branch="$branch/${branch_arr[$i]:0:1}"
+#    else
+#      dir="$branch/${branch_arr[$i]:0:20}"
+#    fi
+#  done
 
-  if [ "${#git_branch}" -gt 22 ]; then
-    git_branch="${git_branch:0:22}>"
-  fi
-
-  echo \[$git_branch\]
+  echo \[${branch_str:0:30}\]
 }
 
-last_two_dirs ()
+short_dirs ()
 {
-  dir=$(pwd |rev| awk -F / '{print $1,$2}' | rev | sed s_\ _/_)
-  dir=${dir//shutterstock/ss>}
-  dir=${dir//Shutterstock/Ss>}
-  dir=${dir//ShutterStock/SS>}
-  if [ ${#dir} -gt 15 ]; then
-    dir_arr=(${dir//\// })
-    if [ ${#dir_arr[0]} -gt 10 ]; then
-      dir_arr[0]="${dir_arr[0]:0:10}>"
+  pwd_dir=$(pwd)
+  dir_arr=(${pwd_dir//\// })
+  end=$(expr ${#dir_arr[@]} - 1)
+
+  dir="";
+  for i in $(seq 0 $end);
+  do
+    if [[ $i != $end ]]; then
+      dir="$dir/${dir_arr[$i]:0:1}"
+    else
+      dir="$dir/${dir_arr[$i]}"
     fi
-    if [ ${#dir_arr[1]} -gt 10 ]; then
-      dir_arr[1]="${dir_arr[1]:0:10}>"
-    fi
-    dir="${dir_arr[0]}/${dir_arr[1]}"
-  fi
+  done
+
   echo "$dir"
 }
 
 prompt=" ɸ "
 
-PS1='\[$c_brack\]{\[$c_dir\]$(last_two_dirs)\[$c_brack\]}\[$c_reset$(git_color)\]$(git_prompt)\[$c_prompt\]$prompt\[$c_reset\]'
+PS1='\[$c_brack\]{\[$c_dir\]$(short_dirs)\[$c_brack\]}\[$c_reset$(git_color)\]$(git_prompt)\[$c_prompt\]$prompt\[$c_reset\]'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
