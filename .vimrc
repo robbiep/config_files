@@ -77,8 +77,7 @@ set noswapfile
 syntax enable
 
 """" COLOR SCHEME """"
-"let g:molokai_original = 1
-colorscheme molokai "solarized "gruvbox
+silent! colorscheme molokai "solarized "gruvbox
 set background=dark
 set t_Co=256
 
