@@ -80,6 +80,7 @@ set undolevels=1000
 set backspace=indent,eol,start
 
 set cursorline
+set wildmenu
 
 set noswapfile
 
@@ -159,15 +160,6 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 endif
-
-" Syntax highlighitng for unknown extensions
-au BufNewFile,BufRead *.pm setf perl
-au BufNewFile,BufRead *.mhtml setf perl
-au BufNewFile,BufRead *.mh setf perl
-au BufNewFile,BufRead,BufNew *.md setf perl
-au BufNewFile,BufRead,BufNew *.md set filetype=perl
-au BufNewFile,BufRead,BufNew *.feature set filetype=ruby
-
 
 " Include external configs
 :so ~/.vimrc_local.vim
