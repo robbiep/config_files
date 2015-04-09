@@ -42,3 +42,4 @@
 	d = diff
 	ch = checkout
 	find = !git ls-files | grep "$@"
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short

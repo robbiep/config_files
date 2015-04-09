@@ -19,10 +19,24 @@ alias ggrep='git grep -n'
 alias v='vim'
 alias grep='grep --color -n'
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+
 ######################################################################
 #   SETTINGS
 
 HISTSIZE=100000
+export HISTFILESIZE=
+export HISTTIMEFORMAT="[%F %T] "
+shopt -s histappend
+# Combine multiline commands into one in history
+shopt -s cmdhist
+# Ignore duplicates, ls without options and builtin commands
+HISTCONTROL=ignoredups
+export HISTIGNORE="&:ls:[bf]g:exit"
 
 ######################################################################
 #   BASH PROMPT
