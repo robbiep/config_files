@@ -27,7 +27,6 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-rails'
 Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
 
