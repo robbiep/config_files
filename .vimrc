@@ -62,6 +62,7 @@ set smartindent
 set smarttab
 set softtabstop=22
 set ts=2
+set complete-=i
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
