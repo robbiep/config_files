@@ -29,6 +29,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
