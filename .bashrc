@@ -12,7 +12,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
-alias gf='git fetch'
+alias gf='git find'
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
 alias ggrep='git grep -n'
 

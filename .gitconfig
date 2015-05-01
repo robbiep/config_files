@@ -41,5 +41,5 @@
 	pl = pull
 	d = diff
 	ch = checkout
-	find = !git ls-files | grep "$@"
+	find = !git ls-files $2 $3 $4 $5 | grep "$1"
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
