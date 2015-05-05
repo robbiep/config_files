@@ -3,6 +3,12 @@
 ######################################################################
 #   ALIASES
 
+function git_find(){
+  search_term=$1
+  shift
+  git ls-files $@ | grep --color "$search_term"
+}
+
 alias g='git'
 alias gpl='git pull'
 alias gps='git push'
@@ -12,7 +18,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
-alias gf='git find'
+alias gf=git_find
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
 alias ggrep='git grep -n'
 
