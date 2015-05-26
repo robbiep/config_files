@@ -41,5 +41,6 @@
 	pl = pull
 	d = diff
 	ch = checkout
-	find = !bash -ic 'git_find \"$@\"' -
+	find = !bash -ic 'git_find \"$@\" | tail -2' -
+	f = !bash -ic 'git_find \"$@\" | tail -2' -
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short

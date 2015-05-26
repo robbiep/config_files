@@ -14,11 +14,15 @@ alias gpl='git pull'
 alias gps='git push'
 alias gs='git status'
 alias gl='git log'
+alias glp='git log -p'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias ga='git add'
 alias gc='git commit'
+alias gca='git commit -a'
 alias gb='git branch'
 alias gf=git_find
+alias gfind=git_find
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
 alias ggrep='git grep -n'
 
