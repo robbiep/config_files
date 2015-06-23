@@ -25,6 +25,8 @@ alias gf=git_find
 alias gfind=git_find
 alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
 alias ggrep='git grep -n'
+alias gdno='git diff --name-only'
+alias gdfno='gdf --name-only'
 
 alias v='vim'
 alias grep='grep --color -n'
