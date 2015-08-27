@@ -14,7 +14,7 @@ touch -a ~/.vimrc_local.vim
 
 # Update vim to install missing plugins
 vim --noplugin +PluginInstall +PluginClean +PluginUpdate +qall
-if [ -x /usr/local/bin/cmake && ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]
+if [ -x /usr/local/bin/cmake -a ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]
   then
     # If it cmake exists but YCM not installed... lets install it
     ~/.vim/bundle/YouCompleteMe/install.py

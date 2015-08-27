@@ -29,7 +29,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
-if (!system('command -v cmake'))
+if (strlen(system('command -v cmake')) && version  > 703)
   Plugin 'Valloric/YouCompleteMe'
 endif
 
