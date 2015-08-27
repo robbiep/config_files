@@ -13,4 +13,4 @@ touch -a ~/.bashrc_local
 touch -a ~/.vimrc_local.vim
 
 # Update vim to install missing plugins
-vim --noplugin +PluginInstall +qall
+vim --noplugin +PluginInstall +PluginClean +PluginUpdate +qall

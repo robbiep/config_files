@@ -29,6 +29,9 @@ Plugin 'tpope/vim-rails'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
+if (!system('command -v cmake'))
+  Plugin 'Valloric/YouCompleteMe'
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
