@@ -88,6 +88,7 @@ set wildmenu
 
 set noswapfile
 
+set regexpengine=1
 syntax enable
 
 """" COLOR SCHEME """"
