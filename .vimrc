@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'morhetz/gruvbox'
 Bundle 'altercation/vim-colors-solarized'
@@ -124,6 +125,15 @@ let g:ctrlp_max_files=0
 """" tagbar """"
 nmap <F8> :TagbarToggle<CR>
 
+"""" syntastic """"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """" KEY MAPPING """"
 set showtabline=2               " File tabs allways visible
