@@ -29,7 +29,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
-if (strlen(system('command -v cmake')) && version  > 703)
+if (!system('command -v cmake'))
   Plugin 'Valloric/YouCompleteMe'
 endif
 
@@ -120,6 +120,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 """" ctrlp """"
 let g:ctrlp_max_files=0
+
+"""" tagbar """"
+nmap <F8> :TagbarToggle<CR>
 
 
 """" KEY MAPPING """"
