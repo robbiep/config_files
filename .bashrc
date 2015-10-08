@@ -30,6 +30,7 @@ alias gdno='git diff --name-only'
 alias gdfno='gdf --name-only'
 
 alias v='vim'
+alias vo='vim -O'
 alias grep='grep --color -n'
 
 alias ..="cd .."
