@@ -31,6 +31,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
 Plugin 'godlygeek/tabular'
+Plugin 'moll/vim-node'
 if (!system('command -v cmake'))
   Plugin 'Valloric/YouCompleteMe'
 endif
