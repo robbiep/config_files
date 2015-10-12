@@ -30,6 +30,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
+Plugin 'godlygeek/tabular'
 if (!system('command -v cmake'))
   Plugin 'Valloric/YouCompleteMe'
 endif
@@ -91,10 +92,20 @@ set noswapfile
 set regexpengine=1
 syntax enable
 
+
 """" COLOR SCHEME """"
 silent! colorscheme molokai "solarized "gruvbox
 set background=dark
 set t_Co=256
+
+
+"""" Tabularize """"
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
 
 
 """" STATUS LINE & AIRLINE """"
@@ -113,6 +124,7 @@ let g:airline_right_alt_sep = ''
 """" NERDtree """"
 map <C-n> :NERDTreeToggle<CR>
 
+
 """" indent guides """"
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_start_level = 2
@@ -123,8 +135,10 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 """" ctrlp """"
 let g:ctrlp_max_files=0
 
+
 """" tagbar """"
 nmap <F8> :TagbarToggle<CR>
+
 
 """" syntastic """"
 set statusline+=%#warningmsg#
@@ -135,6 +149,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 
 """" KEY MAPPING """"
 set showtabline=2               " File tabs allways visible
