@@ -1,3 +1,4 @@
+let mapleader=','
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -123,6 +124,10 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 "let g:airline_powerline_fonts=1
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 """" NERDtree """"
 map <C-n> :NERDTreeToggle<CR>
@@ -179,9 +184,9 @@ nmap <kplus>  :tabnext<cr>
 imap <kminus> :tabprevious<cr>
 map  <kminus> :tabprevious<cr>
 nmap <kminus> :tabprevious<cr>
-map <C-h> :noh<cr>
-map <C-k> :set expandtab!<cr>
-map <C-l> :set list!<cr>
+map <Leader>h :noh<cr>
+map <Leader>k :set expandtab!<cr>
+map <Leader>l :set list!<cr>
 vmap <C-b> :!column -t <cr>gv:s/\(\S\)  /\1 /g<cr>:noh<cr>
 
 map 0 ^
