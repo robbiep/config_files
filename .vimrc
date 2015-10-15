@@ -100,6 +100,11 @@ silent! colorscheme molokai "solarized "gruvbox
 set background=dark
 set t_Co=256
 
+highlight DiffAdd    cterm=none ctermfg=fg ctermbg=Green gui=none guifg=fg guibg=Green
+highlight DiffDelete cterm=none ctermfg=fg ctermbg=Red   gui=none guifg=fg guibg=Red
+highlight DiffChange cterm=none ctermfg=fg ctermbg=Blue  gui=none guifg=fg guibg=Blue
+highlight DiffText   cterm=none ctermfg=bg ctermbg=Blue  gui=none guifg=bg guibg=Blue
+
 
 """" Tabularize """"
 if exists(":Tabularize")
