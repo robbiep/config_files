@@ -13,21 +13,25 @@ alias g='git'
 alias gpl='git pull'
 alias gps='git push'
 alias gs='git status'
+alias gsno='gs --porcelain | cut -c4-'
 alias gl='git log'
+alias glno='gl --name-only'
 alias glp='git log -p'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias ga='git add'
+alias gdiff='git diff'
+alias gd='gdiff'
+alias gdno='gdiff --name-only'
+alias gdc='gdiff --cached'
+alias gdf='gdiff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD' # diff against remote master
+alias gdfno='gdf --name-only'
+alias gadd='git add'
+alias ga='gadd'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gb='git branch'
-alias gf=git_find
 alias gfind=git_find
-alias gdf='git diff $(git merge-base master $(git rev-parse --abbrev-ref HEAD))...HEAD'
+alias gf='gfind'
 alias ggrep='git grep -n'
 alias gg='ggrep'
-alias gdno='git diff --name-only'
-alias gdfno='gdf --name-only'
 
 alias v='vim'
 alias vo='vim -O'
@@ -114,6 +118,15 @@ git_prompt ()
 #  done
 
   echo \[${branch_str:0:30}\]
+}
+
+git_trim ()
+{
+  git fetch
+  for BRANCH in `git branch --merged 'origin/master' | egrep -v "master"`
+  do
+    git branch -D $BRANCH
+  done
 }
 
 short_dirs ()

@@ -40,6 +40,7 @@
 	ps = push
 	pl = pull
 	d = diff
+	dno = diff --name-only
 	ch = checkout
 	find = !bash -ic 'git_find \"$@\"' - | sed \"1 d\" | grep --color $1
 	f    = !bash -ic 'git_find \"$@\"' - | sed \"1 d\" | grep --color $1
