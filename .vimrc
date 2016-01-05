@@ -194,6 +194,12 @@ map <Leader>k :set expandtab!<cr>
 map <Leader>l :set list!<cr>
 vmap <C-b> :!column -t <cr>gv:s/\(\S\)  /\1 /g<cr>:noh<cr>
 
+" disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 map 0 ^
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
