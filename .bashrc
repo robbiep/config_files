@@ -123,7 +123,7 @@ git_prompt ()
 git_trim ()
 {
   git fetch
-  for BRANCH in `git branch --merged 'origin/master' | egrep -v "master"`
+  for BRANCH in `git branch --merged 'origin/master' | egrep -v "master|qa|dev"`
   do
     git branch -D $BRANCH
   done
@@ -150,7 +150,7 @@ short_dirs ()
 
 prompt=" ɸ "
 
-PS1='\[$c_brack\]{\[$c_dir\]$(short_dirs)\[$c_brack\]}\[$c_reset$(git_color)\]$(git_prompt)\[$c_prompt\]$prompt\[$c_reset\]'
+export PS1='\[$c_brack\]{\[$c_dir\]$(short_dirs)\[$c_brack\]}\[$c_reset$(git_color)\]$(git_prompt)\[$c_prompt\]$prompt\[$c_reset\]'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -165,3 +165,6 @@ fi
 if [ -f ~/.bashrc_local ]; then
   source ~/.bashrc_local
 fi
+
+export NVM_DIR="/Users/rperlstein/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
